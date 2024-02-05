@@ -13,7 +13,7 @@ weightedMovingAverage <- function(dat, axes, width, kernel=gauss, alpha=0.05, sp
     colnames(wma.dat) <- x.name # Name the new dataframe as the x-axis
     for (xIndex in 1:length(spine)) { # Iterate through steps in spine
       center <- spine[xIndex] # Center of kernel for step in spine
-      unstd.kernel.value <- kernel(dat[,x.axis], center, width) # Calculate kernel's values over data set 
+      unstd.kernel.value <- kernel(dat[,x.name], center, width) # Calculate kernel's values over data set 
       kernel.value <- unstd.kernel.value/sum(unstd.kernel.value) # Standardize kernel's values
       Average <- sum(kernel.value*dat[,y.name]) # Evaluate convolution over provided dataset to get weighted average
       SumOfSquares <- sum(kernel.value^2) # Get sum-of-squares of kernel's values
