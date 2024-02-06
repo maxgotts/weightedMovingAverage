@@ -1,3 +1,6 @@
+
+
+
 gauss <- function(x, center, width) return(exp(-0.5*((x - center)/width)^2)) # Gaussian kernel
 rect <- function(x, center, width) return(as.numeric(abs(x-center)<width/2)) # Rectangular kernel for simple moving average
 hann <- function(x, center, width) return((1/width) * cos(pi*(x-center)/width)^2  * rect(x, center, width)) # Hann kernel
